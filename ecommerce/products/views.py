@@ -3,9 +3,8 @@ from django.views.generic import ListView, DetailView
 from .models import Product
 
 def product_list(request):
-    products = Product.objects.all()  # Must call .all() to get a queryset
+    products = Product.objects.all()
     return render(request, "products/product_list.html", {"products": products})
-
 
 class ProductListView(ListView):
     model = Product
